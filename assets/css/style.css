@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  height: 80px;
+}
+
+.hero {
+  background: url("../images/gallery/contoh1.jpg") no-repeat center center/cover;
+  height: 70vh;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 8px;
+  filter: brightness(0) invert(1); /* jadi putih */
+  transition: transform 0.2s;
+}
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+}
