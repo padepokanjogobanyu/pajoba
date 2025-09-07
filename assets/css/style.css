@@ -28,9 +28,17 @@ body {
   fill: #0dcaf0; /* efek hover */
 }
 
+/* Aturan default (untuk layar besar / desktop) */
 .carousel-img {
-  height: 300px;       /* bisa ubah ke 350px, 500px, sesuai selera */
-  object-fit: cover;   /* gambar akan menyesuaikan frame tanpa distorsi */
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Untuk layar kecil (smartphone) */
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 250px;
+  }
 }
 
 
