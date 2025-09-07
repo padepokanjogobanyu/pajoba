@@ -28,4 +28,9 @@ body {
   fill: #0dcaf0; /* efek hover */
 }
 
+.carousel-img {
+  height: 400px;       /* bisa ubah ke 350px, 500px, sesuai selera */
+  object-fit: cover;   /* gambar akan menyesuaikan frame tanpa distorsi */
+}
+
 
