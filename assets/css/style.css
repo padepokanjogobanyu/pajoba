@@ -30,14 +30,14 @@ body {
 
 /* Aturan default (untuk layar besar / desktop) */
 .carousel-img {
-  height: 350px !important;
+  height: 450px !important;
   object-fit: cover;
 }
 
 /* Untuk layar kecil (smartphone) */
 @media (max-width: 768px) {
   .carousel-img {
-    height: 250px;
+    height: 350px;
   }
 }
 
