@@ -30,7 +30,7 @@ body {
 
 /* Aturan default (untuk layar besar / desktop) */
 .carousel-img {
-  height: 200px !important;
+  height: 350px !important;
   object-fit: cover;
 }
 
