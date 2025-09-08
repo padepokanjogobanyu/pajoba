@@ -54,3 +54,36 @@ body {
   }
 }
 
+/* Logo responsif */
+.navbar-brand img {
+  max-height: 50px;
+  width: auto;
+  opacity: 0;                  /* awalnya transparan */
+  transform: translateX(-20px); /* geser sedikit ke kiri */
+  animation: fadeInSlide 1s ease forwards; /* jalankan animasi */
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 40px;
+  }
+}
+
+/* Efek hover */
+.navbar-brand img:hover {
+  transform: scale(1.1);
+}
+
+/* Keyframes animasi fade-in + slide */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
