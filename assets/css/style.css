@@ -41,4 +41,15 @@ body {
   }
 }
 
+/* Logo responsif */
+.navbar-brand img {
+  max-height: 50px;   /* tinggi maksimal */
+  width: auto;        /* lebar mengikuti proporsi */
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 40px; /* di HP lebih kecil */
+  }
+}
 
