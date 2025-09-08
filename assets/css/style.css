@@ -38,6 +38,7 @@ body {
 @media (max-width: 768px) {
   .carousel-img {
     height: 550px;
+    width: auto;        /* lebar mengikuti proporsi */
   }
 }
 
