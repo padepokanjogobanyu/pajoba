@@ -89,6 +89,21 @@
   color: #555;
 }
 
+    /* Garis horizontal antar anak */
+.org-level.with-line {
+  position: relative;
+}
+
+.org-level.with-line .horizontal-line {
+  position: absolute;
+  top: -20px;   /* geser sesuai kebutuhan */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #28a745;
+  z-index: -1;
+}
+
   </style>
 </head>
 <body>
@@ -239,6 +254,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
