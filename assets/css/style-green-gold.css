@@ -1,0 +1,45 @@
+
+/* Tema Hijau + Gold */
+body {
+  background-color: #fdfdf8; /* krem muda */
+  color: #2f3e2f;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #006400, #228b22); /* hijau tua ke hijau muda */
+}
+
+.navbar .nav-link {
+  color: #f8f8e8 !important;
+}
+
+.navbar .nav-link.active {
+  color: #ffd700 !important; /* gold */
+  font-weight: bold;
+}
+
+.hero {
+  background: linear-gradient(135deg, #006400, #228b22);
+  color: white;
+}
+
+.hero .btn {
+  background-color: #ffd700;
+  border: none;
+  color: #2f2f2f;
+  font-weight: bold;
+}
+
+.hero .btn:hover {
+  background-color: #e6c200;
+}
+
+footer {
+  background: #004d00; /* hijau gelap */
+  color: #ffd700;
+}
+
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
