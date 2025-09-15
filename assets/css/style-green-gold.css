@@ -1,42 +1,130 @@
-
-/* Tema Hijau + Gold */
-body {
-  background-color: #fdfdf8; /* krem muda */
-  color: #2f3e2f;
+/* Tema putih */
+body.theme-white {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-.navbar {
-  background: linear-gradient(90deg, #006400, #228b22); /* hijau tua ke hijau muda */
+/* Tema hijau-gold */
+body.theme-green-gold {
+  background-color: #004d40; /* hijau gelap */
+  color: #ffd700;            /* gold */
 }
 
-.navbar .nav-link {
-  color: #f8f8e8 !important;
-}
-
-.navbar .nav-link.active {
-  color: #ffd700 !important; /* gold */
-  font-weight: bold;
-}
 
 .hero {
-  background: linear-gradient(135deg, #006400, #228b22);
+  background: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1600&auto=format&fit=crop') no-repeat center center;
+  background-size: cover;
   color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-.hero .btn {
-  background-color: #ffd700;
-  border: none;
-  color: #2f2f2f;
+.section-title {
   font-weight: bold;
+  color: #198754;
 }
 
-.hero .btn:hover {
-  background-color: #e6c200;
+/* Social Icons */
+.social-icon {
+  width: 32px;
+  height: 32px;
+  fill: white;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-footer {
-  background: #004d00; /* hijau gelap */
-  color: #ffd700;
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  fill: #0dcaf0; /* efek hover */
+}
+
+/* Aturan default (untuk layar besar / desktop) */
+.carousel-img {
+  height: 650px !important;
+  object-fit: cover;
+  width: auto;        /* lebar mengikuti proporsi */
+}
+
+/* Untuk layar kecil (smartphone) */
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 550px;
+    width: auto;        /* lebar mengikuti proporsi */
+  }
+}
+
+/* Logo responsif */
+.navbar-brand img {
+  max-height: 50px;   /* tinggi maksimal */
+  width: auto;        /* lebar mengikuti proporsi */
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 40px; /* di HP lebih kecil */
+  }
+}
+
+/* Logo responsif */
+.navbar-brand img {
+  max-height: 50px;
+  width: auto;
+  opacity: 0;                  /* awalnya transparan */
+  transform: translateX(-20px); /* geser sedikit ke kiri */
+  animation: fadeInSlide 1s ease forwards; /* jalankan animasi */
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 40px;
+  }
+}
+
+/* Efek hover */
+.navbar-brand img:hover {
+  transform: scale(1.1);
+}
+
+/* Keyframes animasi fade-in + slide */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === style.css kamu sebelumnya === */
+
+/* Tambahan animasi Hero Section */
+.hero h1, 
+.hero p, 
+.hero a.btn {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+.hero h1 {
+  animation-delay: 0.3s;
+}
+
+.hero p {
+  animation-delay: 0.6s;
+}
+
+.hero a.btn {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
   width: 30%;
