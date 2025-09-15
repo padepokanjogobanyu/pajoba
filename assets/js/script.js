@@ -1,34 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return; // kalau di halaman tertentu tidak ada tombol, biar aman
 
-  // cek dulu apakah ada pilihan manual user
   const savedTheme = localStorage.getItem("theme");
 
+  function applyTheme(theme) {
+    document.body.classList.remove("theme-white", "theme-green-gold");
+    document.body.classList.add(theme);
+    toggleBtn.textContent = theme === "theme-white" ? "🌙 Tema" : "☀️ Tema";
+  }
+
   if (savedTheme) {
-    document.body.className = savedTheme;
-    toggleBtn.textContent = savedTheme === "theme-white" ? "🌙 Tema" : "☀️ Tema";
+    applyTheme(savedTheme);
   } else {
-    // kalau tidak ada, tentukan otomatis berdasarkan jam
     const hour = new Date().getHours();
     if (hour >= 6 && hour < 18) {
-      document.body.className = "theme-green-gold";
-      toggleBtn.textContent = "☀️ Tema";
+      applyTheme("theme-green-gold"); // siang
     } else {
-      document.body.className = "theme-white";
-      toggleBtn.textContent = "🌙 Tema";
+      applyTheme("theme-white"); // malam
     }
   }
 
-  // event klik tombol
   toggleBtn.addEventListener("click", () => {
     if (document.body.classList.contains("theme-white")) {
-      document.body.classList.replace("theme-white", "theme-green-gold");
-      toggleBtn.textContent = "☀️ Tema";
+      applyTheme("theme-green-gold");
       localStorage.setItem("theme", "theme-green-gold");
     } else {
-      document.body.classList.replace("theme-green-gold", "theme-white");
-      toggleBtn.textContent = "🌙 Tema";
+      applyTheme("theme-white");
       localStorage.setItem("theme", "theme-white");
     }
   });
 });
+
+
