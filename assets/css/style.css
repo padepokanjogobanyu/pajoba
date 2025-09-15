@@ -1,15 +1,6 @@
-/* Tema putih */
-body.theme-white {
-  background-color: #ffffff;
-  color: #000000;
+body {
+  font-family: Arial, sans-serif;
 }
-
-/* Tema hijau-gold */
-body.theme-green-gold {
-  background-color: #004d40; /* hijau gelap */
-  color: #ffd700;            /* gold */
-}
-
 
 .hero {
   background: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1600&auto=format&fit=crop') no-repeat center center;
