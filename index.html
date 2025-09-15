@@ -101,7 +101,7 @@
         <li class="nav-item"><a class="nav-link" href="donasi.html">Donasi</a></li>
       </ul>
       <!-- Tombol toggle tema -->
-    <button id="themeToggle" class="btn btn-sm btn-outline-success ms-3">🌙 Tema</button>
+      <button id="themeToggle" class="btn btn-sm btn-outline-success ms-3">🌙 Tema</button>
     </div>
   </div>
 </nav>
@@ -172,13 +172,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Script toggle tema -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("themeToggle");
   const savedTheme = localStorage.getItem("theme");
 
   function applyTheme(theme) {
-    document.body.className = theme;
+    document.body.classList.remove("theme-white", "theme-green-gold");
+    document.body.classList.add(theme);
     toggleBtn.textContent = theme === "theme-white" ? "🌙 Tema" : "☀️ Tema";
   }
 
@@ -187,9 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     const hour = new Date().getHours();
     if (hour >= 6 && hour < 18) {
-      applyTheme("theme-green-gold");
+      applyTheme("theme-green-gold"); // siang
     } else {
-      applyTheme("theme-white");
+      applyTheme("theme-white"); // malam
     }
   }
 
@@ -204,9 +206,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-<script src="assets/js/script.js"></script>
 </body>
 </html>
+
 
 
 
