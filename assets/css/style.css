@@ -131,3 +131,26 @@ body.theme-green-gold {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
+/* === Tema Otomatis / Toggle === */
+
+/* Tema putih */
+body.theme-white {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Tema hijau-gold */
+body.theme-green-gold {
+  background-color: #004d40; /* hijau tua */
+  color: #ffd700;            /* gold */
+}
+
+/* Supaya link terlihat jelas di dua tema */
+body.theme-white a {
+  color: #198754; /* hijau bootstrap */
+}
+
+body.theme-green-gold a {
+  color: #ffeb3b; /* kuning lebih terang */
+}
