@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Foto - Jogo Banyu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-green-gold">
+  <header>
+    <h1>📸 Upload Foto ke Cloudinary</h1>
+  </header>
+
+  <main>
+    <form id="uploadForm">
+      <label for="folder">Pilih Folder:</label>
+      <select id="folder" required>
+        <option value="gallery">Gallery</option>
+        <option value="logo">Logo</option>
+        <option value="organisasi">Organisasi</option>
+        <option value="qris">QRIS</option>
+        <option value="slide">Slide</option>
+        <option value="social">Social</option>
+		<option value="video">Video</option>
+      </select>
+
+      <label for="fileInput">Pilih Gambar:</label>
+      <input type="file" id="fileInput" accept="image/*" required>
+
+      <button type="submit">🚀 Upload</button>
+    </form>
+
+    <div id="preview" style="margin-top:20px;"></div>
+  </main>
+
+  <!-- JS khusus upload -->
+  <script src="script_upload.js"></script>
+</body>
+</html>
+
+
+
