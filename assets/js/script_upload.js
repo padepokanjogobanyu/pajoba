@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const CLOUD_NAME = "dpcul0p7j";
-  const UPLOAD_PRESET = "jogobanyu_upload"; // ganti dengan nama upload preset kamu
+  const UPLOAD_PRESET = "unsigned_preset"; // ganti sesuai upload preset unsigned kamu
 
   const form = document.getElementById("uploadForm");
   const fileInput = document.getElementById("fileInput");
@@ -20,22 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Buat public_id tanpa ekstensi, misalnya nama file asli
-    const publicId = file.name.split(".")[0];
-    console.log("🆔 Public ID:", publicId);
-
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", UPLOAD_PRESET);
     formData.append("folder", folder);
-    formData.append("public_id", publicId); // overwrite dengan nama ini
-    formData.append("invalidate", "true"); // pastikan cache ter-refresh
+    formData.append("use_filename", "true"); // pakai nama asli file
+    formData.append("unique_filename", "false"); // jangan tambahkan hash unik
 
     try {
-      const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await res.json();
       console.log("✅ Response Cloudinary:", data);
@@ -55,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
 
 
 
