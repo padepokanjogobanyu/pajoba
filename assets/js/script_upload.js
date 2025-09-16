@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const CLOUD_NAME = "dpcul0p7j";
-  const UPLOAD_PRESET = "unsigned_preset"; // ganti sesuai upload preset unsigned kamu
+  const UPLOAD_PRESET = "jogobanyu_upload"; // ganti sesuai upload preset unsigned kamu
 
   const form = document.getElementById("uploadForm");
   const fileInput = document.getElementById("fileInput");
@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
