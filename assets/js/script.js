@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fungsi untuk menerapkan tema
   function applyTheme(theme) {
     // Hapus semua kelas tema
-    document.body.classList.remove("theme-white", "theme-green-gold");
+    document.body.classList.remove("theme-blue", "theme-green-gold");
     // Tambahkan kelas tema yang baru
     document.body.classList.add(theme);
 
     // Ubah teks tombol sesuai tema
-    toggleBtn.textContent = theme === "theme-white" ? "🌙 Tema" : "☀️ Tema";
+    toggleBtn.textContent = theme === "theme-blue" ? "🌙 Tema" : "☀️ Tema";
 
     // Opsional: ganti warna tombol outline sesuai tema (kalau perlu override)
     const btns = document.querySelectorAll(".btn-outline-success");
@@ -36,21 +36,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hour >= 6 && hour < 18) {
       applyTheme("theme-green-gold"); // siang
     } else {
-      applyTheme("theme-white"); // malam
+      applyTheme("theme-blue"); // malam
     }
   }
 
   // Event klik tombol toggle
   toggleBtn.addEventListener("click", () => {
-    if (document.body.classList.contains("theme-white")) {
+    if (document.body.classList.contains("theme-blue")) {
       applyTheme("theme-green-gold");
       localStorage.setItem("theme", "theme-green-gold");
     } else {
-      applyTheme("theme-white");
-      localStorage.setItem("theme", "theme-white");
+      applyTheme("theme-blue");
+      localStorage.setItem("theme", "theme-blue");
     }
   });
 });
+
 
 
 
