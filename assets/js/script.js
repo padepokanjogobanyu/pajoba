@@ -32,4 +32,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* Tombol pada Tema Hijau + Gold */
+body.theme-green-gold .btn-success {
+  background-color: #b8860b;  /* gold */
+  border-color: #b8860b;
+  color: #fff;                /* teks putih agar terlihat */
+}
+body.theme-green-gold .btn-outline-success {
+  color: #fff;
+  border-color: #fff;
+}
+body.theme-green-gold .btn-outline-success:hover {
+  background-color: #fff;
+  color: #146c43;
+}
+
+/* Tombol pada Tema Putih (default) */
+body.theme-white .btn-success {
+  background-color: #146c43;
+  border-color: #146c43;
+  color: #fff;
+}
+body.theme-white .btn-outline-success {
+  color: #198754;
+  border-color: #198754;
+}
+body.theme-white .btn-outline-success:hover {
+  background-color: #198754;
+  color: #fff;
+}
+
 
