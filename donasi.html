@@ -124,8 +124,23 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 End of Tawk.to Script -->
     <script src="assets/js/script.js"></script>
+
+    // Theme toggle
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    if(document.body.classList.contains('theme-white')){
+      document.body.classList.replace('theme-white','theme-green-gold');
+      themeToggle.textContent = '☀️ Tema';
+    } else {
+      document.body.classList.replace('theme-green-gold','theme-white');
+      themeToggle.textContent = '🌙 Tema';
+    }
+  });
+</script>
 </body>
 </html>
+
 
 
 
