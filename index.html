@@ -7,15 +7,21 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <meta name="description" content="Website Yayasan Non-Profit Keagamaan: pengajian, maulid, kegiatan sosial.">
+
   <style>
-    /* Supaya gambar carousel lebih proporsional */
+    /* Carousel */
     .carousel-img {
       height: 650px;
       width: 100%;
       object-fit: cover;
     }
+    @media (max-width: 768px) {
+      .carousel-img {
+        height: 300px;
+      }
+    }
 
-    /* Animasi Hero Section */
+    /* Hero Section Animation */
     .hero h1, 
     .hero p, 
     .hero a.btn {
@@ -34,7 +40,7 @@
       }
     }
 
-    /* === Tema Hijau + Gold === */
+    /* Tema Hijau + Gold */
     body.theme-green-gold {
       background-color: #fdfdf7;
       color: #333;
@@ -54,7 +60,7 @@
       background: linear-gradient(90deg, #146c43, #b8860b);
     }
 
-    /* === Tema Putih (default) === */
+    /* Tema Putih (default) */
     body.theme-white {
       background-color: #fff;
       color: #000;
@@ -70,25 +76,31 @@
       background: #222;
     }
 
-    /* Tombol theme toggle */
+    /* Tombol toggle tema */
     #themeToggle {
       margin-left: 10px;
       border-radius: 50px;
       padding: 5px 12px;
       font-size: 0.9rem;
     }
+
+    /* Carousel Indicators Dots */
+    .carousel-indicators [data-bs-target] {
+      background-color: #198754;
+    }
   </style>
 </head>
-<body>
+<body class="theme-white">
+
 <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <!-- LOGO dari Cloudinary -->
       <img src="https://res.cloudinary.com/dpcul0p7j/image/upload/v1758028563/slide/ndcsia0sf92w5zudl2kj.png" 
            alt="Logo" height="100" class="me-2">
       <span>Yayasan Padepokan Jogo Banyu</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" 
+            aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="nav">
@@ -100,9 +112,7 @@
         <li class="nav-item"><a class="nav-link" href="organisasi.html">Organisasi</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
         <li class="nav-item"><a class="nav-link" href="donasi.html">Donasi</a></li>
-<!--        <li class="nav-item"><a class="nav-link" href="upload.html">📸 Upload</a></li>-->
       </ul>
-      <!-- Tombol toggle tema -->
       <button id="themeToggle" class="btn btn-sm btn-outline-success ms-3">🌙 Tema</button>
     </div>
   </div>
@@ -116,8 +126,14 @@
   </div>
 </header>
 
-<!-- Carousel -->
+<!-- Carousel dengan autoplay dan indikator -->
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://res.cloudinary.com/dpcul0p7j/image/upload/v1758026657/slide/zz4piacjvtjibmjvlnom.jpg" 
@@ -146,34 +162,39 @@
 
 <footer class="bg-dark text-white py-4">
   <div class="container text-center">
-    <div class="mb-3 d-flex justify-content-center gap-3">
-      <a href="https://instagram.com/yayasan_padepokan_jogobanyu" target="_blank" aria-label="Instagram">
-        <!-- Instagram Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-instagram" viewBox="0 0 16 16">
-          <path d="M8 0C5.74 0 5.47.01 4.65.05c-.82.04-1.38.17-1.87.37a3.7 3.7 0 0 0-1.35.88A3.7 3.7 0 0 0 .55 2.65c-.2.49-.33 1.05-.37 1.87C.14 5.34.13 5.61.13 8c0 2.39.01 2.66.05 3.48.04.82.17 1.38.37 1.87.2.5.47.9.88 1.35.44.41.85.68 1.35.88.49.2 1.05.33 1.87.37.82.04 1.09.05 3.48.05s2.66-.01 3.48-.05c.82-.04 1.38-.17 1.87-.37.5-.2.9-.47 1.35-.88.41-.44.68-.85.88-1.35.2-.49.33-1.05.37-1.87.04-.82.05-1.09.05-3.48s-.01-2.66-.05-3.48c-.04-.82-.17-1.38-.37-1.87a3.7 3.7 0 0 0-.88-1.35 3.7 3.7 0 0 0-1.35-.88c-.49-.2-1.05-.33-1.87-.37C10.66.01 10.39 0 8 0Zm0 1.44c2.34 0 2.61.01 3.53.05.76.04 1.17.16 1.44.27.36.14.62.3.89.57.27.27.43.53.57.89.11.27.23.68.27 1.44.04.92.05 1.19.05 3.53s-.01 2.61-.05 3.53c-.04.76-.16 1.17-.27 1.44a2.2 2.2 0 0 1-.57.89 2.2 2.2 0 0 1-.89.57c-.27.11-.68.23-1.44.27-.92.04-1.19.05-3.53.05s-2.61-.01-3.53-.05c-.76-.04-1.17-.16-1.44-.27a2.2 2.2 0 0 1-.89-.57 2.2 2.2 0 0 1-.57-.89c-.11-.27-.23-.68-.27-1.44-.04-.92-.05-1.19-.05-3.53s.01-2.61.05-3.53c.04-.76.16-1.17.27-1.44.14-.36.3-.62.57-.89.27-.27.53-.43.89-.57.27-.11.68-.23 1.44-.27.92-.04 1.19-.05 3.53-.05Z"/>
-          <path d="M8 3.89a4.11 4.11 0 1 0 0 8.22 4.11 4.11 0 0 0 0-8.22Zm0 6.78a2.67 2.67 0 1 1 0-5.34 2.67 2.67 0 0 1 0 5.34Zm5.34-6.91a.96.96 0 1 1-1.91 0 .96.96 0 0 1 1.91 0Z"/>
-        </svg>
-      </a>
-      <a href="https://youtube.com/@YAYASANPADEPOKANJOGOBANYU" target="_blank" aria-label="YouTube">
-        <!-- YouTube Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-youtube" viewBox="0 0 16 16">
-          <path d="M8.051 1.999h-.002C3.39 1.999 0 2.229 0 8s3.39 6.001 8.049 6.001h.002C12.71 14.001 16 13.771 16 8s-3.39-6.001-7.949-6.001Zm0 1.1c4.27 0 7.002.188 7.002 4.9s-2.732 4.9-7.002 4.9c-4.271 0-7.002-.188-7.002-4.9s2.731-4.9 7.002-4.9Zm-1.3 2.668v4.466l4.155-2.233L6.751 5.767Z"/>
-        </svg>
-      </a>
-      <a href="https://tiktok.com/@yayasan_jogo_banyu" target="_blank" aria-label="TikTok">
-        <!-- TikTok Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-tiktok" viewBox="0 0 16 16">
-          <path d="M9.548 2.007c.427 1.025 1.44 1.71 2.596 1.787v1.95a5.227 5.227 0 0 1-2.596-.708v4.708a3.58 3.58 0 1 1-3.154-3.543v1.887a1.665 1.665 0 1 0 1.463 1.65V2.007Z"/>
-        </svg>
-      </a>
-    </div>
     <p class="mb-0 small">© 2025 Yayasan Padepokan Jogo Banyu. Semua hak dilindungi.</p>
   </div>
 </footer>
 
-<script src="assets/js/script.js"></script>
+<!-- Bootstrap JS bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Autoplay carousel setiap 3 detik
+  const carouselElement = document.querySelector('#carouselExample');
+  const carousel = new bootstrap.Carousel(carouselElement, {
+    interval: 3000,
+    ride: 'carousel',
+    pause: 'hover'
+  });
+
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    if(document.body.classList.contains('theme-white')){
+      document.body.classList.replace('theme-white','theme-green-gold');
+      themeToggle.textContent = '☀️ Tema';
+    } else {
+      document.body.classList.replace('theme-green-gold','theme-white');
+      themeToggle.textContent = '🌙 Tema';
+    }
+  });
+</script>
+
 </body>
 </html>
+
+
 
 
 
