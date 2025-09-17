@@ -10,29 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.textContent = theme === "theme-white" ? "🌙 Tema" : "☀️ Tema";
   }
 
-  if (savedTheme) {
-    applyTheme(savedTheme);
-  } else {
-    const hour = new Date().getHours();
-    if (hour >= 6 && hour < 18) {
-      applyTheme("theme-green-gold"); // siang
-    } else {
-      applyTheme("theme-white"); // malam
-    }
-  }
-
-  toggleBtn.addEventListener("click", () => {
-    if (document.body.classList.contains("theme-white")) {
-      applyTheme("theme-green-gold");
-      localStorage.setItem("theme", "theme-green-gold");
-    } else {
-      applyTheme("theme-white");
-      localStorage.setItem("theme", "theme-white");
-    }
-  });
-});
-
-/* Tombol pada Tema Hijau + Gold */
+  /* Tombol pada Tema Hijau + Gold */
 body.theme-green-gold .btn-success {
   background-color: #b8860b;  /* gold */
   border-color: #b8860b;
@@ -61,5 +39,30 @@ body.theme-white .btn-outline-success:hover {
   background-color: #198754;
   color: #fff;
 }
+
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else {
+    const hour = new Date().getHours();
+    if (hour >= 6 && hour < 18) {
+      applyTheme("theme-green-gold"); // siang
+    } else {
+      applyTheme("theme-white"); // malam
+    }
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    if (document.body.classList.contains("theme-white")) {
+      applyTheme("theme-green-gold");
+      localStorage.setItem("theme", "theme-green-gold");
+    } else {
+      applyTheme("theme-white");
+      localStorage.setItem("theme", "theme-white");
+    }
+  });
+});
+
+
+
 
 
